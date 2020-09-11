@@ -1,13 +1,3 @@
-
-
-
-# Then I should see the tone or tones listed for each poem.
-# For each poem I should see
-# - Title
-# - Author
-# - The poem(as a single string)
-# I should also see:
-# - The tone or tones for each poem
 require 'rails_helper'
 
 RSpec.describe 'User can search for poems by author', type: :feature do
@@ -36,7 +26,6 @@ RSpec.describe 'User can search for poems by author', type: :feature do
       # - The poem(as a single string)
       # I should also see:
       # - The tone or tones for each poem
-      save_and_open_page
       within('.poems', match: :first) do
         expect(page).to have_css(".title")
         expect(page).to have_css(".author")
