@@ -3,18 +3,11 @@ class SearchController < ApplicationController
     # General Poem information
     author = params[:author]
 
-    # poem_service = PoemService.new
-    # results = poem_service.poems(author)
-    #
-    # @poems = []
-    #
-    # results.each do |poem|
-    #   @poems << Poem.new(poem[:title], poem[:author], poem[:lines])
-    # end
-
     poem_facade = PoemFacade.new(author)
     @poems = poem_facade.find_poems
+
     # Tone analyzer
+    # I would refactor this into a ToneService and create a new poro to add the tones to the poems
     conn = Faraday.new("https://api.us-south.tone-analyzer.watson.cloud.ibm.com") do |connection|
       connection.basic_auth("apikey", ENV['IBM_TONE_API_KEY'])
     end
