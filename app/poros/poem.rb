@@ -2,13 +2,14 @@ class Poem
   attr_reader :id,
               :title,
               :author,
-              :lines,
-              :tones
+              :lines
+
+  attr_accessor :tones
 
   def initialize(title, author, lines)
     @title  = title
     @author = author
-    @lines  = lines].join(' ')
-    @tones = nil
+    @lines  = lines.join(' ')
+    @tones = []
   end
 end
