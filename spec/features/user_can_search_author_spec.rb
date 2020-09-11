@@ -28,7 +28,7 @@ RSpec.describe 'User can search for poems by author', type: :feature do
 
       # Then I should see a list of the first 10 poems
       expect(page).to have_content("10 Results")
-      expect(page).to have_css(".poem", count: 7)
+      expect(page).to have_css(".poem", count: 10)
 
       # For each poem I should see
       # - Title
