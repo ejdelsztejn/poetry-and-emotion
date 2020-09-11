@@ -3,17 +3,12 @@ class SearchController < ApplicationController
     # General Poem information
     author = params[:author]
 
-    conn = Faraday.new(url: 'https://poetrydb.org')
-
-    response = conn.get("/author/#{author}")
-
-    json = JSON.parse(response.body, symbolize_names: true)
-
-    top_poems = json[0..9]
+    poem_service = PoemService.new
+    results = poem_service.poems(author)
 
     @poems = []
 
-    top_poems.each do |poem|
+    results.each do |poem|
       @poems << Poem.new(poem[:title], poem[:author], poem[:lines])
     end
 

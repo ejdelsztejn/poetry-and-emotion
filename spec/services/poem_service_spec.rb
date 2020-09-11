@@ -5,6 +5,6 @@ RSpec.describe 'Poem Service' do
     poem_service = PoemService.new
     results = poem_service.poems('Emily')
 
-    expect(results).to be_a(Hash)
+    expect(results).to be_a(Array)
   end
 end
