@@ -39,7 +39,7 @@ RSpec.describe 'User can search for poems by author', type: :feature do
       within('.poems').first do
         expect(page).to have_css(".title")
         expect(page).to have_css(".author")
-        expect(page).to have_css(".poem")
+        expect(page).to have_css(".lines")
         expect(page).to have_css(".tones")
       end
     end
