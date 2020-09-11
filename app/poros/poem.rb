@@ -6,10 +6,10 @@ class Poem
 
   attr_accessor :tones
 
-  def initialize(title, author, lines)
-    @title  = title
-    @author = author
-    @lines  = lines.join(' ')
+  def initialize(data)
+    @title  = data[:title]
+    @author = data[:author]
+    @lines  = data[:lines].join(' ')
     @tones = []
   end
 end

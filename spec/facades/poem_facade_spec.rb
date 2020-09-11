@@ -6,7 +6,7 @@ RSpec.describe 'Poem Facade' do
   end
 
   it "#get_poems_data" do
-    poems = @poems_facade.get_poems_data
+    poems = @poem_facade.get_poems_data
     expect(poems).to be_a(Array)
   end
 end
