@@ -29,7 +29,5 @@ class SearchController < ApplicationController
         poem.tones << tone[:tone_name]
       end
     end
-
-    require "pry"; binding.pry
   end
 end

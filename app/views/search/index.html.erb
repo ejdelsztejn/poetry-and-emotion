@@ -1,9 +1,16 @@
 <h1><%= @poems.count %> Results</h1>
+<section class="poems">
 <% @poems.each do |poem| %>
   <section class="poem">
     <p class="title"><b><%= poem.title %></b></p>
     <p class="author"><b>Author: </b><%= poem.author %></p>
     <p class="lines"><b>Lines: </b><%= poem.lines %></p>
+    <ul class="tones"><b>Tones:</b>
+    <% poem.tones.each do |tone| %>
+      <li class="tone"><%= tone %></li>
+    <% end %>
+    </ul>
     <br>
   </section>
+</section>
 <% end %>
