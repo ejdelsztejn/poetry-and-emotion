@@ -36,7 +36,8 @@ RSpec.describe 'User can search for poems by author', type: :feature do
       # - The poem(as a single string)
       # I should also see:
       # - The tone or tones for each poem
-      within('.poems').first do
+      save_and_open_page
+      within('.poem').first do
         expect(page).to have_css(".title")
         expect(page).to have_css(".author")
         expect(page).to have_css(".lines")
