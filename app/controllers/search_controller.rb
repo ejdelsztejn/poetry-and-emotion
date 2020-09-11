@@ -5,6 +5,9 @@ class SearchController < ApplicationController
     conn = Faraday.new(url: 'https://poetrydb.org')
 
     response = conn.get("/author/#{author}")
-    require "pry"; binding.pry
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    @poems = json[0..9]
   end
 end
